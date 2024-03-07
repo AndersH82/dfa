@@ -61,7 +61,7 @@ DEBUG = 'DEV' in os.environ
 
 
 ALLOWED_HOSTS = [
-    *os.environ.get('ALLOWED_HOST', '').split(' '),
+     os.environ.get('ALLOWED_HOST', '').split(' '),
     '8000-andersh82-dfa-763n415494s.ws-eu108.gitpod.io'
 ]
 
