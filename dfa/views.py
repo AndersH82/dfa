@@ -9,7 +9,7 @@ from .settings import (
 @api_view()
 def root_route(request):
     return Response({
-        "message": "Welcome to my dfa API"
+        "message": "Welcome to my drf API!"
     })
 
 # dj-rest-auth logout view fix
