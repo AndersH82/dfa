@@ -119,6 +119,10 @@ else:
 
 CORS_ALLOW_CREDENTIALS = True
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
+
 ROOT_URLCONF = 'dfa.urls'
 
 TEMPLATES = [
