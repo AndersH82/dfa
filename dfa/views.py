@@ -12,7 +12,7 @@ def root_route(request):
         "message": "Welcome to my drf API!"
     })
 
-# dj-rest-auth logout view fix
+
 @api_view(['POST'])
 def logout_route(request):
     response = Response()

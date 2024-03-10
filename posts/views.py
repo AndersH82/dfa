@@ -4,7 +4,6 @@ from django_filters.rest_framework import DjangoFilterBackend
 from dfa.permissions import IsOwnerOrReadOnly
 from .models import Post
 from .serializers import PostSerializer
-from django.db.models import Count
 
 
 class PostList(generics.ListCreateAPIView):
@@ -19,7 +18,7 @@ class PostList(generics.ListCreateAPIView):
         filters.SearchFilter,
         DjangoFilterBackend,
     ]
-    filterset_fields  = [
+    filterset_fields = [
         'owner__followed__owner__profile',
         'likes__owner__profile',
         'owner__profile',
