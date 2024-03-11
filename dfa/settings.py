@@ -63,7 +63,7 @@ DEBUG = 'DEV' in os.environ
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
     '8000-andersh82-dfa-763n415494s.ws-eu108.gitpod.io',
-    'https://dfa-app-40b00696cbce.herokuapp.com',
+    'dfa-app-40b00696cbce.herokuapp.com',
     ]
 
 
