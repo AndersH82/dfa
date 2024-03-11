@@ -64,6 +64,7 @@ ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
     '8000-andersh82-dfa-763n415494s.ws-eu108.gitpod.io',
     'dfa-app-40b00696cbce.herokuapp.com',
+    '3000-andersh82-moments-1iw7ksq20l8.ws-eu108.gitpod.io',
     ]
 
 
