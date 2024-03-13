@@ -32,9 +32,8 @@ REST_FRAMEWORK = {
         if 'DEV' in os.environ
         else 'dj_rest_auth.jwt_auth.JWTCookieAuthentication'
     )],
-
     'DEFAULT_PAGINATION_CLASS':
-    'rest_framework.pagination.PageNumberPagination',
+        'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
     'DATETIME_FORMAT': '%d %b %Y',
 }
@@ -47,7 +46,7 @@ REST_USE_JWT = True
 JWT_AUTH_SECURE = True
 JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
-JWF_AUTH_SAMESITE = 'None'
+
 
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'dfa.serializers.CurrentUserSerializer'
@@ -63,7 +62,7 @@ DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
     os.environ.get('ALLOWED_HOST'),
-    '8000-andersh82-dfa-763n415494s.ws-eu108.gitpod.io',
+    '8000-andersh82-dfa-763n415494s.ws-eu110.gitpod.io',
     'dfa-app-40b00696cbce.herokuapp.com',
     ]
 
@@ -108,6 +107,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+JWF_AUTH_SAMESITE = 'None'
+
 if 'CLIENT_ORIGIN_DEV' in os.environ:
     extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''),
                              re.IGNORECASE).group(0)
@@ -127,6 +128,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 ROOT_URLCONF = 'dfa.urls'
+
 
 TEMPLATES = [
     {

@@ -7,6 +7,10 @@ from .serializers import ProfileSerializer
 
 
 class ProfileList(generics.ListAPIView):
+    """
+    List all profiles.
+    No create view as profile creation is handled by django signals.
+    """
     queryset = Profile.objects.annotate(
         posts_count=Count('owner__post', distinct=True),
         followers_count=Count('owner__followed', distinct=True),
@@ -16,7 +20,6 @@ class ProfileList(generics.ListAPIView):
     filter_backends = [
         filters.OrderingFilter,
         DjangoFilterBackend,
-
     ]
     filterset_fields = [
         'owner__following__followed__profile',
@@ -32,6 +35,9 @@ class ProfileList(generics.ListAPIView):
 
 
 class ProfileDetail(generics.RetrieveUpdateAPIView):
+    """
+    Retrieve or update a profile if you're the owner.
+    """
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Profile.objects.annotate(
         posts_count=Count('owner__post', distinct=True),
