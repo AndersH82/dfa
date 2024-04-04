@@ -23,7 +23,7 @@ CLOUDINARY_STORAGE = {
 }
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 REST_FRAMEWORK = {
@@ -51,13 +51,10 @@ JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'dfa.serializers.CurrentUserSerializer'
 }
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'Ral14Nel17Nat20'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = [
